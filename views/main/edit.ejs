@@ -1,0 +1,19 @@
+<div class="container mt-5" style="width: 35rem;">
+    <h1><i class="bi bi-plus-circle-dotted text-primary"></i> <%= title %></h1>
+    <form action="/edit/drug/<%= drugs._id %>" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="img" class="form-label">Image</label>
+            <img src="/images/<%= drugs.img %>" class="card-img-top" alt="...">
+            <input type="file" class="form-control" id="img" name="img" value="<%= drugs.img%>">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= drugs.name %>">
+        </div>
+        <div class="mb-3">
+            <label for="count" class="form-label">Count</label>
+            <input type="number" class="form-control" id="count" name="count" value="<%= drugs.count %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

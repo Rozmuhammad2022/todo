@@ -1,0 +1,25 @@
+<div class="container">
+    <h1><%= title %></h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Count</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if (typeof data === "string") { %> 
+                <h3><%= data %></h3>
+            <% } else { %>
+            <% data?.forEach(drugs => { %> 
+                <tr>
+                    <td><%= drugs.name %></td>
+                    <td><%= drugs.count %></td>
+                    <td><%= moment(drugs.createdAt).format('MMMM Do YYYY, h:mm:ss a') %></td>
+                </tr>        
+            <% })} %>
+        </tbody>
+      </table>
+</div>

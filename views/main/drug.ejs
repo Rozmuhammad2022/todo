@@ -1,0 +1,15 @@
+<div class="m-5">
+    <div class="card h-100" style="width: 28rem;">
+        <img src="/images/<%= drug.img %>" class="card-img-top " alt="...">
+        <div class="card-header text-center h3">
+            <i class="bi bi-clipboard2-check"></i> 
+            <%= drug.name %>
+        </div>
+        <div class="card-body text-center">
+            <div>
+                <a href="/edit/drug/<%= drug._id %>" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
+                <a href="/delete/drug/<%= drug._id %>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

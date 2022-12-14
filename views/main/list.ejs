@@ -1,0 +1,34 @@
+<h1 class="mb-4"><%= title %></h1>
+
+<a class="btn btn-primary" href="/add"><i class="bi bi-plus-circle"></i> Add Drugs</a>
+<hr>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4 mb-4">
+    <% data.forEach(item => { %> 
+        <div class="col">
+            <div class="card h-100">
+                <img src="/images/<%= item.img %>" class="card-img-top" alt="...">
+                <div class="card-header text-center h3">
+                    <a href="/drug/<%= item._id %>" style="text-decoration:none;">
+                        <i class="bi bi-clipboard2-check"></i> 
+                        <%= item.name %>
+                    </a>
+                </div>
+                <div class="card-body text-center">
+                    <div>
+                        <button data-id="<%= item._id %>" data-name="minus" class="btn btn-sm btn-primary"><i class="bi bi-dash-circle"></i></button>
+                        <span data-id="<%= item._id %>" class="badge bg-light text-dark p-2" style="font-size: 17px;">
+                            <%= item.count %>
+                        </span>
+                        <button data-id="<%= item._id %>" data-name="plus" class="btn btn-sm btn-primary"><i class="bi bi-plus-circle"></i></button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="bi bi-calendar-day"></i> 
+                        <span data-id="<%= item._id %>">Last updated <%= moment(item.updatedAt).add('days').calendar() %></span>
+                    </small>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
